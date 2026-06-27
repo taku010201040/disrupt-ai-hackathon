@@ -1,0 +1,27 @@
+.vercel
+
+# Large files
+*.mp4
+*.MP4
+ScreenRecording_*
+.vercel
+
+# Large files
+*.mp4
+*.MP4
+ScreenRecording_*
+
+# Temporary files
+*.tmp
+~$*
+mso*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+**/desktop.ini
+
+# Local scratch and temp files
+scratch/
+.tmp.driveupload/

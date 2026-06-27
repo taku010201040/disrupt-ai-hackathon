@@ -1,0 +1,29 @@
+# Ignore PDFs and large docs
+*.pdf
+*.zip
+*.exe
+*.txt
+*.csv
+*.md
+!README.md
+*.MP4
+*.mp4
+*.docx
+*.xlsx
+*.lnk
+*.tmp
+*.json
+!vercel.json
+!package.json
+*.svg
+
+# Ignore subdirectories
+Discord-Hackathon/
+scratch/
+drive_downloads/
+.git/
+.github/
+.vscode/
+.vercel/
+node_modules/
+.agents/

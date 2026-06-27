@@ -1,0 +1,2794 @@
+{
+  "object": "list",
+  "results": [
+    {
+      "object": "page",
+      "id": "3759fc43-9bc5-805b-9a2b-d33351acd209",
+      "created_time": "2026-06-04T14:12:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "d46a8f6e-5dd3-43ad-a4ca-b51446bfae35",
+            "name": "広報班",
+            "color": "purple"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "da973eca-e899-4b45-a239-ddb2368b528c",
+            "name": "高",
+            "color": "red"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": null
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "b159fc43-9bc5-8266-99a1-813e8af2ad7f"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "SNS設営",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "SNS設営",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/SNS-3759fc439bc5805b9a2bd33351acd209",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3759fc43-9bc5-808f-9d2d-c2670f72ab4a",
+      "created_time": "2026-06-04T11:46:00.000Z",
+      "last_edited_time": "2026-06-07T15:17:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "229d872b-594c-8127-a1ae-0002b739c619"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "d46a8f6e-5dd3-43ad-a4ca-b51446bfae35",
+            "name": "広報班",
+            "color": "purple"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "da973eca-e899-4b45-a239-ddb2368b528c",
+            "name": "高",
+            "color": "red"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": null
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "b159fc43-9bc5-8266-99a1-813e8af2ad7f"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "【早急】公式Webサイト作成",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "【早急】公式Webサイト作成",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/Web-3759fc439bc5808f9d2dc2670f72ab4a",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3759fc43-9bc5-80fe-a497-f3ec8ccaf0a0",
+      "created_time": "2026-06-04T11:08:00.000Z",
+      "last_edited_time": "2026-06-09T13:10:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "d34960be-6ba9-4ca9-947c-79a4b840b46d",
+            "name": "企画・進行班",
+            "color": "orange"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "da973eca-e899-4b45-a239-ddb2368b528c",
+            "name": "高",
+            "color": "red"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": null
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "c409fc43-9bc5-82a8-a51d-0185d52d3695"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "会場押さえ",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "会場押さえ",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/3759fc439bc580fea497f3ec8ccaf0a0",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3759fc43-9bc5-80d1-8e07-e757d8984691",
+      "created_time": "2026-06-04T10:58:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "9c80a7d4-f3db-43a2-ac16-03ab8cf9aa59",
+            "name": "外部連携班",
+            "color": "blue"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "da973eca-e899-4b45-a239-ddb2368b528c",
+            "name": "高",
+            "color": "red"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-06-20",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "0969fc43-9bc5-838a-8f99-0195859d326d"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "メンター募集",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "メンター募集",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/3759fc439bc580d18e07e757d8984691",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-8147-97c4-e2e8ad8d557c",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "d34960be-6ba9-4ca9-947c-79a4b840b46d",
+            "name": "企画・進行班",
+            "color": "orange"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "8e75fb50-5d14-427a-a294-1e1abbab8d17",
+            "name": "中",
+            "color": "yellow"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-06-16",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "c409fc43-9bc5-82a8-a51d-0185d52d3695"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "1ed55a3c-1b32-436a-9667-30d1d99d85ef",
+            "name": "Done",
+            "color": "green"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "提出期限カウントダウンおよび上書きコマンドの実装",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "提出期限カウントダウンおよび上書きコマンドの実装",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/3739fc439bc5814797c4e2e8ad8d557c",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-816e-a372-dabdee61e34a",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "d34960be-6ba9-4ca9-947c-79a4b840b46d",
+            "name": "企画・進行班",
+            "color": "orange"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "8e75fb50-5d14-427a-a294-1e1abbab8d17",
+            "name": "中",
+            "color": "yellow"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-06-16",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "c409fc43-9bc5-82a8-a51d-0185d52d3695"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "1ed55a3c-1b32-436a-9667-30d1d99d85ef",
+            "name": "Done",
+            "color": "green"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "動的ボイスチャンネル（Auto-VC）システムの実装",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "動的ボイスチャンネル（Auto-VC）システムの実装",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/Auto-VC-3739fc439bc5816ea372dabdee61e34a",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-8128-b95d-e90650ee7158",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "c28a48e1-d03e-4c2a-ac5a-92c2ff696fb9",
+            "name": "PM",
+            "color": "green"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "c3129e59-214a-4aad-a319-5fd0e99272e2",
+            "name": "低",
+            "color": "blue"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-06-16",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "3be9fc43-9bc5-8345-bec2-819e2cf4f6d5"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "a652bf7b-45d4-4018-b6f3-a8c255bb55e8",
+            "name": "In progress",
+            "color": "blue"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "進捗シグナルおよびチャンネル自動管理機能の実装",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "進捗シグナルおよびチャンネル自動管理機能の実装",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/3739fc439bc58128b95de90650ee7158",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-81cb-93cf-ebe55fd50ab7",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "d34960be-6ba9-4ca9-947c-79a4b840b46d",
+            "name": "企画・進行班",
+            "color": "orange"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "c3129e59-214a-4aad-a319-5fd0e99272e2",
+            "name": "低",
+            "color": "blue"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-06-16",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "c409fc43-9bc5-82a8-a51d-0185d52d3695"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "a652bf7b-45d4-4018-b6f3-a8c255bb55e8",
+            "name": "In progress",
+            "color": "blue"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Gemini API搭載の技術サポートRAGチャットの実装",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Gemini API搭載の技術サポートRAGチャットの実装",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/Gemini-API-RAG-3739fc439bc581cb93cfebe55fd50ab7",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-81c1-9b55-d7e887270247",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "c28a48e1-d03e-4c2a-ac5a-92c2ff696fb9",
+            "name": "PM",
+            "color": "green"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "c3129e59-214a-4aad-a319-5fd0e99272e2",
+            "name": "低",
+            "color": "blue"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-07-05",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "3be9fc43-9bc5-8345-bec2-819e2cf4f6d5"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "当日ボランティアスタッフの連絡網およびシフト管理",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "当日ボランティアスタッフの連絡網およびシフト管理",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/3739fc439bc581c19b55d7e887270247",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-81e8-9072-f579ec610084",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": [
+            {
+              "object": "user",
+              "id": "229d872b-594c-8127-a1ae-0002b739c619",
+              "name": "田窪佑一朗",
+              "avatar_url": "https://s3-us-west-2.amazonaws.com/public.notion-static.com/0a8b4bb9-6fbe-48fd-b2fd-82e9f6efb682/(Upload-from-mobile-1751864815)IMG_9855.jpeg",
+              "type": "person",
+              "person": {
+                "email": "g2432263@cc.kyoto-su.ac.jp"
+              }
+            }
+          ]
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "9c80a7d4-f3db-43a2-ac16-03ab8cf9aa59",
+            "name": "外部連携班",
+            "color": "blue"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "8e75fb50-5d14-427a-a294-1e1abbab8d17",
+            "name": "中",
+            "color": "yellow"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-07-11",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "0969fc43-9bc5-838a-8f99-0195859d326d"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Red Bullの飲料調達手配",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Red Bullの飲料調達手配",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/Red-Bull-3739fc439bc581e89072f579ec610084",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-8179-a528-fc6e90749d8f",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "d34960be-6ba9-4ca9-947c-79a4b840b46d",
+            "name": "企画・進行班",
+            "color": "orange"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "8e75fb50-5d14-427a-a294-1e1abbab8d17",
+            "name": "中",
+            "color": "yellow"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-07-11",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "c409fc43-9bc5-82a8-a51d-0185d52d3695"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "QUINTBRIDGEのレイアウトおよび電源ドラム配置設計",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "QUINTBRIDGEのレイアウトおよび電源ドラム配置設計",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/QUINTBRIDGE-3739fc439bc58179a528fc6e90749d8f",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-8100-9d05-fb3b4440e011",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "d46a8f6e-5dd3-43ad-a4ca-b51446bfae35",
+            "name": "広報班",
+            "color": "purple"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "8e75fb50-5d14-427a-a294-1e1abbab8d17",
+            "name": "中",
+            "color": "yellow"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-06-16",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "b159fc43-9bc5-8266-99a1-813e8af2ad7f"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "a652bf7b-45d4-4018-b6f3-a8c255bb55e8",
+            "name": "In progress",
+            "color": "blue"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "DiscordサーバーのWelcomeチャンネル・ルール整備",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "DiscordサーバーのWelcomeチャンネル・ルール整備",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/Discord-Welcome-3739fc439bc581009d05fb3b4440e011",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-8192-9928-c9f26687c3a0",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "d46a8f6e-5dd3-43ad-a4ca-b51446bfae35",
+            "name": "広報班",
+            "color": "purple"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "8e75fb50-5d14-427a-a294-1e1abbab8d17",
+            "name": "中",
+            "color": "yellow"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-06-25",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "b159fc43-9bc5-8266-99a1-813e8af2ad7f"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "関西圏主要大学サークルへのダイレクト営業",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "関西圏主要大学サークルへのダイレクト営業",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/3739fc439bc581929928c9f26687c3a0",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-81fb-9968-c35d12b1b35a",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "d46a8f6e-5dd3-43ad-a4ca-b51446bfae35",
+            "name": "広報班",
+            "color": "purple"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "8e75fb50-5d14-427a-a294-1e1abbab8d17",
+            "name": "中",
+            "color": "yellow"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-06-15",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "b159fc43-9bc5-8266-99a1-813e8af2ad7f"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Connpass集客用イベントページの立ち上げ・運用",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Connpass集客用イベントページの立ち上げ・運用",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/Connpass-3739fc439bc581fb9968c35d12b1b35a",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-811c-9e1f-f24de06691e9",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "d46a8f6e-5dd3-43ad-a4ca-b51446bfae35",
+            "name": "広報班",
+            "color": "purple"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "8e75fb50-5d14-427a-a294-1e1abbab8d17",
+            "name": "中",
+            "color": "yellow"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-07-11",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "b159fc43-9bc5-8266-99a1-813e8af2ad7f"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "会場投影用スライドテンプレートの制作",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "会場投影用スライドテンプレートの制作",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/3739fc439bc5811c9e1ff24de06691e9",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-813d-b0ee-ce734cb5ad1c",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "d46a8f6e-5dd3-43ad-a4ca-b51446bfae35",
+            "name": "広報班",
+            "color": "purple"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "8e75fb50-5d14-427a-a294-1e1abbab8d17",
+            "name": "中",
+            "color": "yellow"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-07-11",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "b159fc43-9bc5-8266-99a1-813e8af2ad7f"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "当日用名札パスおよびステッカーのデザイン",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "当日用名札パスおよびステッカーのデザイン",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/3739fc439bc5813db0eece734cb5ad1c",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-81f8-ad90-faa3a0fa025f",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "d46a8f6e-5dd3-43ad-a4ca-b51446bfae35",
+            "name": "広報班",
+            "color": "purple"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "8e75fb50-5d14-427a-a294-1e1abbab8d17",
+            "name": "中",
+            "color": "yellow"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-06-15",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "b159fc43-9bc5-8266-99a1-813e8af2ad7f"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Canva用SNS広報バナーテンプレートの制作",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Canva用SNS広報バナーテンプレートの制作",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/Canva-SNS-3739fc439bc581f8ad90faa3a0fa025f",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-812f-99fd-f28d2c324ba3",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "d34960be-6ba9-4ca9-947c-79a4b840b46d",
+            "name": "企画・進行班",
+            "color": "orange"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "8e75fb50-5d14-427a-a294-1e1abbab8d17",
+            "name": "中",
+            "color": "yellow"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-07-05",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "c409fc43-9bc5-82a8-a51d-0185d52d3695"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "技術メンター向け事前配布資料の作成",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "技術メンター向け事前配布資料の作成",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/3739fc439bc5812f99fdf28d2c324ba3",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-8143-a637-fe908071c874",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "d34960be-6ba9-4ca9-947c-79a4b840b46d",
+            "name": "企画・進行班",
+            "color": "orange"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "8e75fb50-5d14-427a-a294-1e1abbab8d17",
+            "name": "中",
+            "color": "yellow"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-07-09",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "c409fc43-9bc5-82a8-a51d-0185d52d3695"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "技術サポートヘルプデスクの待機シフト策定",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "技術サポートヘルプデスクの待機シフト策定",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/3739fc439bc58143a637fe908071c874",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-811c-9896-f5369d1718fa",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "d34960be-6ba9-4ca9-947c-79a4b840b46d",
+            "name": "企画・進行班",
+            "color": "orange"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "8e75fb50-5d14-427a-a294-1e1abbab8d17",
+            "name": "中",
+            "color": "yellow"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-07-11",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "c409fc43-9bc5-82a8-a51d-0185d52d3695"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "開発用スターターマニュアルの執筆",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "開発用スターターマニュアルの執筆",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/3739fc439bc5811c9896f5369d1718fa",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-818e-85aa-d73c7730f6e2",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "c28a48e1-d03e-4c2a-ac5a-92c2ff696fb9",
+            "name": "PM",
+            "color": "green"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "8e75fb50-5d14-427a-a294-1e1abbab8d17",
+            "name": "中",
+            "color": "yellow"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-07-11",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "3be9fc43-9bc5-8345-bec2-819e2cf4f6d5"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "司会進行（MC）のトークリハーサルの実施",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "司会進行（MC）のトークリハーサルの実施",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/MC-3739fc439bc5818e85aad73c7730f6e2",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-81c9-aff0-e0003c8e3109",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "d34960be-6ba9-4ca9-947c-79a4b840b46d",
+            "name": "企画・進行班",
+            "color": "orange"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "8e75fb50-5d14-427a-a294-1e1abbab8d17",
+            "name": "中",
+            "color": "yellow"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-07-11",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "c409fc43-9bc5-82a8-a51d-0185d52d3695"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "体験テストセッション用のフィードバックカードの設計",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "体験テストセッション用のフィードバックカードの設計",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/3739fc439bc581c9aff0e0003c8e3109",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-8199-bcf2-f5d4cebe8beb",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "c28a48e1-d03e-4c2a-ac5a-92c2ff696fb9",
+            "name": "PM",
+            "color": "green"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "8e75fb50-5d14-427a-a294-1e1abbab8d17",
+            "name": "中",
+            "color": "yellow"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-07-11",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "3be9fc43-9bc5-8345-bec2-819e2cf4f6d5"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "当日進行タイムテーブルおよびトークスクリプトの作成",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "当日進行タイムテーブルおよびトークスクリプトの作成",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/3739fc439bc58199bcf2f5d4cebe8beb",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-817b-827e-d63492a3cc2f",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "d34960be-6ba9-4ca9-947c-79a4b840b46d",
+            "name": "企画・進行班",
+            "color": "orange"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "8e75fb50-5d14-427a-a294-1e1abbab8d17",
+            "name": "中",
+            "color": "yellow"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": {
+            "start": "2026-07-11",
+            "end": null,
+            "time_zone": null
+          }
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "c409fc43-9bc5-82a8-a51d-0185d52d3695"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "ハックテーマ（地域課題）の文言・お題の設計",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "ハックテーマ（地域課題）の文言・お題の設計",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/3739fc439bc5817b827ed63492a3cc2f",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-81c1-860c-d48fb98ae97a",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-04T15:00:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": []
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "9c80a7d4-f3db-43a2-ac16-03ab8cf9aa59",
+            "name": "外部連携班",
+            "color": "blue"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "8e75fb50-5d14-427a-a294-1e1abbab8d17",
+            "name": "中",
+            "color": "yellow"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": null
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "0969fc43-9bc5-838a-8f99-0195859d326d"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "ee83d3b7-b2f9-4f0d-a461-f3be23087200",
+            "name": "Not started",
+            "color": "default"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "スポンサー営業進捗Notionの管理",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "スポンサー営業進捗Notionの管理",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/Notion-3739fc439bc581c1860cd48fb98ae97a",
+      "public_url": null,
+      "archived": false
+    },
+    {
+      "object": "page",
+      "id": "3739fc43-9bc5-81ce-ae2c-ca07a45c7426",
+      "created_time": "2026-06-02T04:51:00.000Z",
+      "last_edited_time": "2026-06-07T09:43:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "3739fc43-9bc5-81d0-b5c3-00277575140f"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "339d872b-594c-81dd-9d62-000290e62e89"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "3739fc43-9bc5-815f-805e-eb136b0c6ec8"
+      },
+      "in_trash": false,
+      "is_archived": false,
+      "is_locked": false,
+      "properties": {
+        "担当者": {
+          "id": "%3ELp%7C",
+          "type": "people",
+          "people": [
+            {
+              "object": "user",
+              "id": "229d872b-594c-8127-a1ae-0002b739c619",
+              "name": "田窪佑一朗",
+              "avatar_url": "https://s3-us-west-2.amazonaws.com/public.notion-static.com/0a8b4bb9-6fbe-48fd-b2fd-82e9f6efb682/(Upload-from-mobile-1751864815)IMG_9855.jpeg",
+              "type": "person",
+              "person": {
+                "email": "g2432263@cc.kyoto-su.ac.jp"
+              }
+            }
+          ]
+        },
+        "カテゴリ": {
+          "id": "D%5Cyz",
+          "type": "select",
+          "select": {
+            "id": "957e07e0-a487-4066-bccd-34a6da296e87",
+            "name": "統括",
+            "color": "red"
+          }
+        },
+        "優先度": {
+          "id": "XS%5DZ",
+          "type": "select",
+          "select": {
+            "id": "da973eca-e899-4b45-a239-ddb2368b528c",
+            "name": "高",
+            "color": "red"
+          }
+        },
+        "選択": {
+          "id": "%5DuH%5D",
+          "type": "select",
+          "select": null
+        },
+        "期限": {
+          "id": "mg%3DF",
+          "type": "date",
+          "date": null
+        },
+        "👫 チーム ": {
+          "id": "uySR",
+          "type": "relation",
+          "relation": [
+            {
+              "id": "3be9fc43-9bc5-8345-bec2-819e2cf4f6d5"
+            }
+          ],
+          "has_more": false
+        },
+        "ステータス": {
+          "id": "zIpa",
+          "type": "status",
+          "status": {
+            "id": "a652bf7b-45d4-4018-b6f3-a8c255bb55e8",
+            "name": "In progress",
+            "color": "blue"
+          }
+        },
+        "タスク": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "週次進捗同期MTGの招集と議事録管理",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "週次進捗同期MTGの招集と議事録管理",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://app.notion.com/p/MTG-3739fc439bc581ceae2cca07a45c7426",
+      "public_url": null,
+      "archived": false
+    }
+  ],
+  "next_cursor": null,
+  "has_more": false,
+  "type": "page_or_database",
+  "page_or_database": {},
+  "request_id": "e4bfcd9c-e349-42de-bd98-9ef92d92638c"
+}

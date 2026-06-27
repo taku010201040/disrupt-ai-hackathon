@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第一回全体定例スライド - DISRUPT AI Hackathon 2026</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS Variables & Theme Setup */
+    :root {
+      /* Dark Theme (Default) Variables */
+      --bg-dark: #090c10;
+      --bg-card: rgba(22, 28, 36, 0.65);
+      --bg-glass: rgba(255, 255, 255, 0.03);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(56, 189, 248, 0.15);
+      
+      --text-main: #f0f6fc;
+      --text-muted: #8b949e;
+      --text-sub: #c9d1d9;
+      
+      --primary: #38bdf8; /* Glowing Cyan */
+      --primary-rgb: 56, 189, 248;
+      --secondary: #a855f7; /* Violet */
+      --secondary-rgb: 168, 85, 247;
+      --success: #34d399; /* Emerald */
+      --warning: #fbbf24; /* Amber */
+      --danger: #f87171; /* Rose */
+      
+      --font-outfit: 'Outfit', 'Noto Sans JP', sans-serif;
+      --font-noto: 'Noto Sans JP', sans-serif;
+      
+      --slide-width: 1120px;
+      --slide-height: 630px;
+      --card-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px var(--border-glow);
+    }
+
+    /* Light Theme Variables */
+    body.light-theme {
+      --bg-dark: #f0f2f5;
+      --bg-card: rgba(255, 255, 255, 0.85);
+      --bg-glass: rgba(0, 0, 0, 0.03);
+      --border-color: rgba(0, 0, 0, 0.08);
+      --border-glow: rgba(2, 132, 199, 0.08);
+      
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-sub: #334155;
+      
+      --primary: #0284c7; /* Darker Cyan for readability */
+      --primary-rgb: 2, 132, 199;
+      --secondary: #7e22ce; /* Darker Purple for readability */
+      --secondary-rgb: 126, 34, 206;
+      --success: #059669;
+      --warning: #d97706;
+      --danger: #dc2626;
+      
+      --card-shadow: 0 20px 50px rgba(15, 23, 42, 0.08), 0 0 30px rgba(2, 132, 199, 0.05);
+    }
+
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-noto);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Glow Decorative Elements */
+    .glow-blob {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(var(--primary-rgb), 0.08) 0%, rgba(0,0,0,0) 70%);
+      filter: blur(50px);
+      z-index: 1;
+      pointer-events: none;
+      transition: background 0.3s ease;
+    }
+    .blob-1 { top: -10%; left: -10%; }
+    .blob-2 { bottom: -10%; right: -10%; background: radial-gradient(circle, rgba(var(--secondary-rgb), 0.06) 0%, rgba(0,0,0,0) 70%); }
+
+    body.light-theme .glow-blob {
+      background: radial-gradient(circle, rgba(var(--primary-rgb), 0.04) 0%, rgba(0,0,0,0) 70%);
+    }
+
+    /* Layout Wrapper */
+    .presentation-container {
+      width: 100%;
+      max-width: var(--slide-width);
+      height: var(--slide-height);
+      display: flex;
+      flex-direction: column;
+      z-index: 10;
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(20px);
+      transition: all 0.3s ease;
+    }
+
+    /* Top Navigation Header */
+    header.slide-header {
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-outfit);
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      color: var(--primary);
+    }
+    .header-logo span {
+      color: var(--text-main);
+    }
+    .header-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      border-left: 2px solid var(--border-color);
+      padding-left: 15px;
+    }
+    .header-controls {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .control-btn {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-color);
+      color: var(--text-sub);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .control-btn:hover {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+    body:not(.light-theme) .control-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Slides Content Area */
+    .slides-wrapper {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      padding: 40px;
+    }
+
+    .slide {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+      right: 40px;
+      bottom: 40px;
+      opacity: 0;
+      transform: translate3d(50px, 0, 0);
+      pointer-events: none;
+      transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+                  transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      pointer-events: auto;
+      z-index: 20;
+    }
+
+    .slide.prev-slide {
+      transform: translate3d(-50px, 0, 0);
+    }
+
+    /* Typography & Core Slide Elements */
+    .slide-title {
+      font-size: 2.1rem;
+      font-weight: 800;
+      margin-bottom: 25px;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      letter-spacing: -0.5px;
+    }
+    .slide-title::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 32px;
+      background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+      border-radius: 4px;
+    }
+    .slide-title .agenda-num {
+      color: var(--secondary);
+      font-family: var(--font-outfit);
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    .slide-content {
+      flex: 1;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--text-sub);
+    }
+
+    /* Two Column Layout */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      height: 100%;
+    }
+
+    /* Cards / Boxes */
+    .content-box {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 15px;
+      transition: border-color 0.2s ease;
+    }
+    .content-box:hover {
+      border-color: rgba(var(--primary-rgb), 0.3);
+    }
+    .content-box h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .content-box ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .content-box li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 20px;
+      font-size: 0.95rem;
+    }
+    .content-box li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+    }
+
+    /* Specific elements styling */
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-primary { background: rgba(56, 189, 248, 0.15); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.3); }
+    .badge-secondary { background: rgba(168, 85, 247, 0.15); color: var(--secondary); border: 1px solid rgba(168, 85, 247, 0.3); }
+    .badge-success { background: rgba(52, 211, 153, 0.15); color: var(--success); border: 1px solid rgba(52, 211, 153, 0.3); }
+    .badge-warning { background: rgba(251, 191, 36, 0.15); color: var(--warning); border: 1px solid rgba(251, 191, 36, 0.3); }
+    .badge-danger { background: rgba(248, 113, 113, 0.15); color: var(--danger); border: 1px solid rgba(248, 113, 113, 0.3); }
+
+    body.light-theme .badge-primary { background: rgba(2, 132, 199, 0.08); }
+    body.light-theme .badge-secondary { background: rgba(126, 34, 206, 0.08); }
+    body.light-theme .badge-success { background: rgba(5, 150, 105, 0.08); }
+    body.light-theme .badge-warning { background: rgba(217, 119, 6, 0.08); }
+    body.light-theme .badge-danger { background: rgba(220, 38, 38, 0.08); }
+
+    /* Bullet Lists */
+    ul.nice-list {
+      list-style: none;
+    }
+    ul.nice-list li {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 25px;
+    }
+    ul.nice-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    ul.nice-list strong {
+      color: var(--text-main);
+    }
+
+    /* Timeline or Comparison */
+    .comparison-wrapper {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 20px;
+      height: 100%;
+    }
+    .comp-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .comp-card.before {
+      border-left: 4px solid var(--danger);
+    }
+    .comp-card.after {
+      border-left: 4px solid var(--success);
+      background: rgba(52, 211, 153, 0.02);
+    }
+    body.light-theme .comp-card.after {
+      background: rgba(5, 150, 105, 0.01);
+    }
+    .comp-header {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .comp-header.before-title { color: var(--danger); }
+    .comp-header.after-title { color: var(--success); }
+    
+    .arrow-icon {
+      font-size: 2rem;
+      color: var(--primary);
+      animation: pulse 2s infinite;
+    }
+
+    /* Meeting Metadata Grid */
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+    .meta-item {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+    .meta-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+    .meta-val {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .meta-val a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .meta-val a:hover {
+      text-decoration: underline;
+    }
+
+    /* Cover Slide Styling */
+    .cover-slide {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100%;
+    }
+    .cover-badge {
+      margin-bottom: 20px;
+    }
+    .cover-title {
+      font-family: var(--font-outfit);
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--text-main) 30%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+      letter-spacing: -1px;
+    }
+    .cover-subtitle {
+      font-size: 1.5rem;
+      color: var(--text-sub);
+      margin-bottom: 40px;
+      font-weight: 500;
+    }
+    .cover-info {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      display: flex;
+      gap: 30px;
+    }
+
+    /* Footer / Progress Bar */
+    footer.slide-footer {
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-color);
+    }
+    .footer-left {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .progress-dots {
+      display: flex;
+      gap: 8px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border-color);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .dot.active {
+      background: var(--primary);
+      transform: scale(1.3);
+      box-shadow: 0 0 8px var(--primary);
+    }
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .nav-btn {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      transition: all 0.2s ease;
+    }
+    .nav-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.4);
+    }
+    body.light-theme .nav-btn:hover {
+      color: #fff;
+    }
+    .slide-number {
+      font-family: var(--font-outfit);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      min-width: 45px;
+      text-align: center;
+    }
+
+    /* Overview Grid Mode overlay */
+    .overview-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(9, 12, 16, 0.95);
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      overflow-y: auto;
+      padding: 50px;
+    }
+    body.light-theme .overview-overlay {
+      background: rgba(240, 242, 245, 0.98);
+    }
+    .overview-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .overview-card {
+      background: #161b22;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      aspect-ratio: 16 / 9;
+      padding: 15px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    body.light-theme .overview-card {
+      background: #ffffff;
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.05);
+    }
+    .overview-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.2);
+    }
+    .overview-card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .overview-card-num {
+      font-family: var(--font-outfit);
+      font-size: 0.8rem;
+      color: var(--primary);
+      align-self: flex-end;
+    }
+
+    /* Print styling */
+    @media print {
+      body {
+        overflow: visible;
+        background: #fff;
+        color: #000;
+      }
+      .glow-blob, header.slide-header, footer.slide-footer, .overview-overlay {
+        display: none !important;
+      }
+      .presentation-container {
+        border: none !important;
+        box-shadow: none !important;
+        background: #fff !important;
+        width: 100% !important;
+        height: auto !important;
+        max-width: none !important;
+        backdrop-filter: none !important;
+      }
+      .slides-wrapper {
+        padding: 0;
+      }
+      .slide {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        opacity: 1 !important;
+        transform: none !important;
+        page-break-after: always;
+        height: 100vh;
+        justify-content: center;
+        padding: 40px;
+        background: #fff;
+        color: #000;
+      }
+      .slide-title {
+        color: #000 !important;
+      }
+      .slide-title::before {
+        background: #000 !important;
+      }
+      .content-box {
+        background: #f6f8fa !important;
+        border: 1px solid #d0d7de !important;
+        color: #000 !important;
+      }
+      .content-box h3 {
+        color: #0969da !important;
+      }
+      .meta-item {
+        background: #f6f8fa !important;
+        border: 1px solid #d0d7de !important;
+      }
+      .meta-val, .meta-val a {
+        color: #000 !important;
+      }
+      .comp-card {
+        background: #f6f8fa !important;
+        border: 1px solid #d0d7de !important;
+      }
+      .comp-card.before { border-left: 4px solid #cf222e !important; }
+      .comp-card.after { border-left: 4px solid #1a7f37 !important; }
+      .arrow-icon { color: #0969da !important; }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.8; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Decorative blur circles -->
+  <div class="glow-blob blob-1"></div>
+  <div class="glow-blob blob-2"></div>
+
+  <!-- Slides Deck Wrapper -->
+  <div class="presentation-container" id="presentation">
+    
+    <!-- Header -->
+    <header class="slide-header">
+      <div class="header-logo">
+        🚀 <span>DISRUPT AI HACKATHON</span>
+      </div>
+      <div class="header-title" id="header-slide-title">第一回全体定例</div>
+      <div class="header-controls">
+        <button class="control-btn" id="btn-theme" title="背景色を黒と白で切り替えます">
+          🎨 背景切替 (黒/白)
+        </button>
+        <button class="control-btn" id="btn-overview" title="Escキーでも可">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M5 2a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2H5zm0 5a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2H5zm0 5a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2H5z"/></svg>
+          一覧表示
+        </button>
+        <button class="control-btn" id="btn-fullscreen">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 1 0v-2h2a.5.5 0 0 0 0-1h-3zm13 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-2h-2a.5.5 0 0 1 0-1h3zM1 11.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-2v2a.5.5 0 0 1-1 0v-3zm14 0a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0 0 1h2v2a.5.5 0 0 0 1 0v-3z"/></svg>
+          全画面
+        </button>
+        <button class="control-btn" onclick="window.print()">
+          🖨️ PDF印刷
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="slides-wrapper">
+
+      <!-- Slide 1: Cover -->
+      <div class="slide cover-slide active" data-title="タイトル">
+        <div class="cover-badge">
+          <span class="badge badge-primary">DISRUPT AI Hackathon 2026</span>
+        </div>
+        <h1 class="cover-title">📌 第一回全体定例ミーティング</h1>
+        <p class="cover-subtitle">イベント準備計画＆進捗共有会</p>
+        
+        <div style="margin: 20px 0; border-top: 1px solid var(--border-color); width: 80px;"></div>
+        
+        <div class="cover-info">
+          <div><strong>日時:</strong> 2026年6月22日 21:00〜</div>
+          <div><strong>場所:</strong> Google Meet / Discord</div>
+        </div>
+      </div>
+
+      <!-- Slide 2: Info & Attendees -->
+      <div class="slide" data-title="定例概要・出席者">
+        <h2 class="slide-title">定例概要・出席状況</h2>
+        
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">📅 日時</span>
+            <span class="meta-val">2026年6月22日 21:00〜</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">📍 場所</span>
+            <span class="meta-val"><a href="https://meet.google.com/tbb-uopj-mzm" target="_blank">Google Meet (接続)</a></span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">📅 スケジュール登録</span>
+            <span class="meta-val"><a href="https://discord.gg/6CRTTmkEq?event=1517890896148828350" target="_blank">Discordイベント</a></span>
+          </div>
+        </div>
+
+        <div class="grid-2" style="height: calc(100% - 130px);">
+          <div class="content-box">
+            <h3>👥 出席予定</h3>
+            <p style="font-size: 1.05rem; color: var(--text-main); line-height: 2;">
+              田窪、川崎、高井、大東、三品、貞野、徳倉、大黒<br>
+              <span class="badge badge-primary" style="margin-top: 5px;">21:30〜 合流</span> 細見
+            </p>
+          </div>
+          <div class="content-box">
+            <h3>❌ 欠席・不明</h3>
+            <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 2;">
+              金城、松本、宮竹、市村、増井、古川、貞野、富士野、石川
+            </p>
+            <div style="margin-top: 15px; font-size: 0.85rem; border-top: 1px solid var(--border-color); padding-top: 10px; color: var(--warning);">
+              ⚠️ メンバーのレスポンスに差があるため、今後の稼働と予定確保について確認が必要です。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: Goal & Objectives -->
+      <div class="slide" data-title="本日の目的・目標">
+        <h2 class="slide-title">定例の目的・今週の目標</h2>
+        <div class="grid-2">
+          <div>
+            <div class="content-box" style="height: 100%;">
+              <h3>🎯 本日の定例の目的</h3>
+              <p style="font-size: 1.05rem; margin-bottom: 20px; line-height: 1.6;">
+                <strong>運用ルールやロードマップの変更内容を全員で共有・合意し、各班の進捗を確認してチーム全体の方向性を統一する。</strong>
+              </p>
+              <ul class="nice-list">
+                <li>メンバー間の認識のズレを解消する</li>
+                <li>長期ロードマップと次の具体アクションの合意</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <div class="content-box" style="margin-bottom: 20px;">
+              <h3>📅 本日の目標</h3>
+              <ul class="nice-list" style="margin-bottom: 0;">
+                <li><strong>今日中に各イベントの日程を決定する。</strong></li>
+              </ul>
+            </div>
+            <div class="content-box">
+              <h3>🚀 今週の目標</h3>
+              <ul class="nice-list" style="margin-bottom: 0;">
+                <li><strong>今週中に会場の利用申請（クイントブリッジ等）を行えるようにする。</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4: Agenda 1 -->
+      <div class="slide" data-title="【議題①】本多さんのご紹介">
+        <h2 class="slide-title"><span class="agenda-num">議題①</span> 本多竜之介さんのご紹介</h2>
+        
+        <div class="grid-2">
+          <div class="content-box" style="height: 100%;">
+            <h3>👥 本多さんのバックグラウンド</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 15px; line-height: 1.6;">
+              私たちのハッカソンを指導・バックアップしてくださるアドバイザーです。
+            </p>
+            <ul class="nice-list" style="font-size: 0.9rem;">
+              <li><strong>実績:</strong> JGCI（Japan Grand Challenge研究会）アドバイザー。企業のAI実装化支援や自治体連携のプロフェッショナル。</li>
+              <li><strong>連携ネットワーク:</strong> 自治体（大津市等）やメディア（びわ湖放送、大津新聞等）の巻き込みをサポート。</li>
+            </ul>
+          </div>
+
+          <div class="content-box" style="height: 100%;">
+            <h3>🛠️ プロジェクトへの協力・アドバイス内容</h3>
+            <ul class="nice-list" style="font-size: 0.9rem;">
+              <li><strong>社会実装への接続:</strong> 自治体が抱える「リアルな社会課題」の提供、優秀アイデアの実証実験の接続。</li>
+              <li><strong>「大人の暴力」による集客ブースト:</strong> 東京の議員関係者やイケイケな学生起業家（Aim石井氏、東大発スタートアップ緒方氏、タイミー智也氏など）をアドバイザー・審査員としてトスアップし、信頼度を高めて集客力を強化する。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 5: Agenda 2 -->
+      <div class="slide" data-title="【議題②】リマインド">
+        <h2 class="slide-title"><span class="agenda-num">議題②</span> リマインド（期限超過タスク）</h2>
+        
+        <div class="grid-2">
+          <div class="content-box" style="height: 100%; border-color: rgba(248, 113, 113, 0.4); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <h3>⚠️ 大至急対応が必要なタスク</h3>
+              <div class="content-box" style="background: rgba(248, 113, 113, 0.05); border-color: var(--danger); margin-bottom: 20px;">
+                <h4 style="color: var(--text-main); font-size: 1.1rem; margin-bottom: 8px;">HP掲載用テキストの作成・提出</h4>
+                <p style="font-size: 0.9rem; color: var(--text-sub); line-height: 1.5;">
+                  ホームページに公開する、企画紹介・団体紹介用の文章です。<br>
+                  提出期限を過ぎているメンバーは、<strong>本日の定例定例ミーティング終了後、即時に</strong>提出をお願いします。
+                </p>
+              </div>
+            </div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">
+              ※HPの初期公開日程に影響するため、協力をお願いします。
+            </div>
+          </div>
+
+          <div class="content-box" style="height: 100%;">
+            <h3>💡 提出先とフォーマット</h3>
+            <ul class="nice-list" style="font-size: 0.95rem;">
+              <li><strong>提出先:</strong> Discordの `#hp制作` または `#連絡事項` チャンネル。</li>
+              <li><strong>形式:</strong> テキスト形式（Markdownまたはスレッドへ直貼り）</li>
+              <li>提出状況が不明な場合は、統括（田窪）までご連絡ください。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 6: Agenda 3 (Part 1) -->
+      <div class="slide" data-title="【議題③】共有事項 (1)">
+        <h2 class="slide-title"><span class="agenda-num">議題③</span> 共有・確認事項（ルール＆日程）</h2>
+        
+        <div class="grid-2">
+          <div class="content-box">
+            <h3>💬 1. Discord返信の「原則スレッド形式」徹底</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 15px; line-height: 1.5;">
+              メインタイムラインの混雑を防ぎ、過去ログや各タスクの進行履歴を可視化・管理しやすくするため。
+            </p>
+            <div style="background: rgba(255,255,255,0.02); padding: 12px; border-radius: 8px; font-size: 0.85rem; border-left: 3px solid var(--secondary);">
+              📌 <strong>ルール:</strong> チャンネル上の特定の連絡や指示へ返信する際は、直接チャンネルへ投稿せず、対象の投稿から「スレッドを開いて」返信を行ってください。
+            </div>
+          </div>
+
+          <div class="content-box">
+            <h3>📅 2. 各班の定例MTG曜日の確認・共有</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 15px; line-height: 1.5;">
+              今後のスムーズな進捗把握と全体連携のため、各班（企画進行、広報、外部連携）の定例ミーティング曜日・時間を決定します。
+            </p>
+            <ul class="nice-list" style="font-size: 0.85rem;">
+              <li>確定した日程は <strong>Discordのスケジュール機能</strong> と <strong>共有Googleカレンダー</strong> に登録し、他班からも一目で確認できるようにします。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 7: Agenda 3 (Part 2) -->
+      <div class="slide" data-title="【議題③】共有事項 (2)">
+        <h2 class="slide-title"><span class="agenda-num">議題③</span> 共有・確認事項（名前決定＆SNS誘導）</h2>
+        
+        <div class="grid-2">
+          <div class="content-box" style="height: 100%;">
+            <h3>🏷️ 3. イベント名称の決定</h3>
+            <div class="content-box" style="background: rgba(56, 189, 248, 0.05); margin-bottom: 15px; border-color: var(--primary);">
+              <h4 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 5px;">「ディスラプト・ハッカソン (仮)」</h4>
+              <p style="font-size: 0.85rem; color: var(--text-sub); line-height: 1.5;">
+                <strong>Disrupt (ディスラプト)</strong>：既存の枠組みを覆す、イノベーションを起こす。<br>
+                今年のビジネス・スタートアップにおけるトレンドワードでもあり、私たちのコンセプトに合致するため、これで確定として進めてよいか合意を取ります。
+              </p>
+            </div>
+          </div>
+
+          <div class="content-box" style="height: 100%; border-color: rgba(52, 211, 153, 0.4);">
+            <h3>🔥 4. 6/24「AIブートキャンプ」での直接アプローチ</h3>
+            <span class="badge badge-success" style="margin-bottom: 10px;">超重要・直近タスク</span>
+            <p style="font-size: 0.9rem; margin-bottom: 12px; line-height: 1.5;">
+              6月24日（水）のAIブートキャンプに運営メンバー<strong>7名</strong>で参加。AIに関心のある参加者たちへ直接ハッカソンのアピールを行います。
+            </p>
+            <ul class="nice-list" style="font-size: 0.85rem;">
+              <li><strong>緊急準備タスク:</strong> アプローチした人たちの「受け皿」となる**ハッカソン公式LINE公式アカウントまたはInstagram**を、広報班で**水曜日（6/24）まで**に立ち上げること。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 8: Agenda 4 -->
+      <div class="slide" data-title="【議題④】各班の進捗・QA">
+        <h2 class="slide-title"><span class="agenda-num">議題④</span> 各班の進捗状況とQA</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; height: calc(100% - 60px);">
+          <div class="content-box" style="margin-bottom: 0; padding: 15px;">
+            <h3 style="font-size: 1rem;"><span class="badge badge-primary">統括</span> 運営統括</h3>
+            <ul class="nice-list" style="font-size: 0.8rem; margin-top: 10px;">
+              <li>スポンサー協賛メニュー（特典内容と金額設定）の最終すり合わせ。</li>
+              <li>全体の連携カレンダーの整備。</li>
+            </ul>
+          </div>
+
+          <div class="content-box" style="margin-bottom: 0; padding: 15px;">
+            <h3 style="font-size: 1rem;"><span class="badge badge-secondary">進行</span> 企画進行班</h3>
+            <ul class="nice-list" style="font-size: 0.8rem; margin-top: 10px;">
+              <li>プレイベント（LT会・勉強会等）の企画ブレスト開始。</li>
+              <li>会場（クイントブリッジ等）の選定・日程調整（今週中申請目標）。</li>
+            </ul>
+          </div>
+
+          <div class="content-box" style="margin-bottom: 0; padding: 15px;">
+            <h3 style="font-size: 1rem;"><span class="badge badge-success">広報</span> 広報班</h3>
+            <ul class="nice-list" style="font-size: 0.8rem; margin-top: 10px;">
+              <li>大東さゆみリーダー就任。</li>
+              <li>ロゴおよび集集客バナーのデザイン着手。</li>
+              <li>DM送付用の大学・サークルリストの作成開始。</li>
+            </ul>
+          </div>
+
+          <div class="content-box" style="margin-bottom: 0; padding: 15px;">
+            <h3 style="font-size: 1rem;"><span class="badge badge-warning">連携</span> 外部連携班</h3>
+            <ul class="nice-list" style="font-size: 0.8rem; margin-top: 10px;">
+              <li>共催・協賛・メンター候補企業のアプローチ用リスト作成。</li>
+              <li>企業提案用ピッチ資料の作成開始。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 9: Agenda 5 -->
+      <div class="slide" data-title="【議題⑤】ロードマップ見直し">
+        <h2 class="slide-title"><span class="agenda-num">議題⑤</span> 変更点の共有：ロードマップの見直し</h2>
+        
+        <div class="comparison-wrapper" style="height: calc(100% - 60px);">
+          <!-- Before -->
+          <div class="comp-card before">
+            <div class="comp-header before-title">変更前 (旧ロードマップ)</div>
+            <ul class="nice-list" style="font-size: 0.85rem; flex: 1; line-height: 1.4;">
+              <li>夏休み中に<strong>Phase 1 (30人)</strong> 開催</li>
+              <li>直後に<strong>Phase 2 (60人)</strong> 開催</li>
+              <li>冬休み中に<strong>Phase 3 (100人以上)</strong> 開催</li>
+              <li style="color: var(--danger); font-weight: 500;">⚠️ フェーズ間の猶予が1ヶ月未満と極めてタイトで、集客や外部連携の準備が物理的に間に合わないリスクがあった。</li>
+            </ul>
+          </div>
+
+          <!-- Arrow -->
+          <div class="arrow-icon">▶</div>
+
+          <!-- After -->
+          <div class="comp-card after">
+            <div class="comp-header after-title">変更案 (新ロードマップ)</div>
+            <ul class="nice-list" style="font-size: 0.85rem; flex: 1; line-height: 1.4;">
+              <li>100人規模のイベント（旧フェーズ3）を<strong>「来年以降の年2回の大型イベント」</strong>と長期目線に位置づける。</li>
+              <li>それに向けて、<strong>プレイベント（LT会や勉強会など）をオンライン・オフラインで段階的に実施</strong>して集客基盤を作る。</li>
+              <li>ハッカソン自体の規模も、開催を重ねながら徐々にスケールアップする方式に変更する。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 10: Next Actions -->
+      <div class="slide" data-title="決定事項・次回アクション">
+        <h2 class="slide-title">本日の決定事項と次回アクション</h2>
+        
+        <div class="grid-2">
+          <div class="content-box" style="height: 100%;">
+            <h3>📝 本日MTG中に確定させること</h3>
+            <ul class="nice-list" style="font-size: 0.9rem;">
+              <li><strong>各イベント（プレイベント含む）の開催日付の決定</strong></li>
+              <li><strong>「ディスラプト・ハッカソン」の名称採用の最終合意</strong></li>
+              <li><strong>各班の定例MTG日時の確定（カレンダー登録）</strong></li>
+              <li><strong>6/24アプローチに向けた公式SNS開設（広報班担当者決定）</strong></li>
+            </ul>
+          </div>
+
+          <div class="content-box" style="height: 100%;">
+            <h3>🔥 各班の今週のコミット事項</h3>
+            <ul class="nice-list" style="font-size: 0.9rem;">
+              <li><strong>企画進行班:</strong> 会場（QUINTBRIDGE等）の利用申請の完了。プレイベント企画案の骨子決定。</li>
+              <li><strong>広報班:</strong> 6/24用の公式LINE/インスタ開設（至急）。ロゴ初稿案の作成。</li>
+              <li><strong>外部連携班:</strong> 企業アプローチ資料の構成案決定。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="slide-footer">
+      <div class="footer-left">
+        📅 日時: 2026/06/22 21:00〜 | 第一回全体定例スライド
+      </div>
+      <div class="progress-dots" id="dots-container">
+        <!-- Dots generated by JS -->
+      </div>
+      <div class="footer-right">
+        <button class="nav-btn" id="btn-prev" title="左矢印キー">&lt;</button>
+        <div class="slide-number"><span id="current-slide-num">1</span> / <span id="total-slide-num">10</span></div>
+        <button class="nav-btn" id="btn-next" title="右矢印キー / スペースキー">&gt;</button>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Grid Overview Overlay -->
+  <div class="overview-overlay" id="overview-overlay">
+    <h2 style="text-align: center; margin-bottom: 30px; font-family: var(--font-outfit); font-weight: 800; font-size: 2rem;">スライド一覧</h2>
+    <div class="overview-grid" id="overview-grid">
+      <!-- Grid cards generated by JS -->
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <button class="control-btn" id="btn-close-overview" style="padding: 10px 20px; font-size: 1rem; font-weight: bold;">
+        スライドに戻る
+      </button>
+    </div>
+  </div>
+
+  <!-- Script for Navigation -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const slides = document.querySelectorAll(".slide");
+      const currentSlideNumSpan = document.getElementById("current-slide-num");
+      const totalSlideNumSpan = document.getElementById("total-slide-num");
+      const dotsContainer = document.getElementById("dots-container");
+      const btnPrev = document.getElementById("btn-prev");
+      const btnNext = document.getElementById("btn-next");
+      const btnOverview = document.getElementById("btn-overview");
+      const btnCloseOverview = document.getElementById("btn-close-overview");
+      const btnFullscreen = document.getElementById("btn-fullscreen");
+      const btnTheme = document.getElementById("btn-theme");
+      const headerTitle = document.getElementById("header-slide-title");
+      const overviewOverlay = document.getElementById("overview-overlay");
+      const overviewGrid = document.getElementById("overview-grid");
+
+      let currentIdx = 0;
+      const totalSlides = slides.length;
+      totalSlideNumSpan.textContent = totalSlides;
+
+      // Theme toggle implementation
+      btnTheme.addEventListener("click", () => {
+        document.body.classList.toggle("light-theme");
+        
+        // Save preferences
+        const isLight = document.body.classList.contains("light-theme");
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+      });
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+      }
+
+      // Generate Navigation Dots & Overview Grid
+      slides.forEach((slide, idx) => {
+        // Dot
+        const dot = document.createElement("div");
+        dot.className = `dot ${idx === 0 ? "active" : ""}`;
+        dot.addEventListener("click", () => goToSlide(idx));
+        dotsContainer.appendChild(dot);
+
+        // Overview Card
+        const title = slide.getAttribute("data-title") || `スライド ${idx + 1}`;
+        const card = document.createElement("div");
+        card.className = "overview-card";
+        card.innerHTML = `
+          <div class="overview-card-title">${title}</div>
+          <div class="overview-card-num">${idx + 1}</div>
+        `;
+        card.addEventListener("click", () => {
+          goToSlide(idx);
+          toggleOverview(false);
+        });
+        overviewGrid.appendChild(card);
+      });
+
+      const dots = document.querySelectorAll(".dot");
+
+      // Update Navigation Status
+      function updateNav() {
+        slides.forEach((slide, idx) => {
+          slide.classList.remove("active", "prev-slide");
+          dots[idx].classList.remove("active");
+
+          if (idx === currentIdx) {
+            slide.classList.add("active");
+            dots[idx].classList.add("active");
+          } else if (idx < currentIdx) {
+            slide.classList.add("prev-slide");
+          }
+        });
+
+        currentSlideNumSpan.textContent = currentIdx + 1;
+        const currentTitle = slides[currentIdx].getAttribute("data-title");
+        headerTitle.textContent = currentIdx === 0 ? "第一回全体定例" : `第一回全体定例 - ${currentTitle}`;
+      }
+
+      function goToSlide(idx) {
+        if (idx >= 0 && idx < totalSlides) {
+          currentIdx = idx;
+          updateNav();
+        }
+      }
+
+      function nextSlide() {
+        if (currentIdx < totalSlides - 1) {
+          currentIdx++;
+          updateNav();
+        }
+      }
+
+      function prevSlide() {
+        if (currentIdx > 0) {
+          currentIdx--;
+          updateNav();
+        }
+      }
+
+      // Keyboard Controls
+      document.addEventListener("keydown", (e) => {
+        if (overviewOverlay.classList.contains("active")) {
+          if (e.key === "Escape") {
+            toggleOverview(false);
+          }
+          return;
+        }
+
+        if (e.key === "ArrowRight" || e.key === "Space" || e.key === " ") {
+          e.preventDefault();
+          nextSlide();
+        } else if (e.key === "ArrowLeft" || e.key === "Backspace") {
+          e.preventDefault();
+          prevSlide();
+        } else if (e.key === "Escape") {
+          toggleOverview(true);
+        }
+      });
+
+      // Navigation Buttons
+      btnPrev.addEventListener("click", prevSlide);
+      btnNext.addEventListener("click", nextSlide);
+
+      // Overview Toggle
+      function toggleOverview(show) {
+        if (show) {
+          overviewOverlay.classList.add("active");
+        } else {
+          overviewOverlay.classList.remove("active");
+        }
+      }
+
+      btnOverview.addEventListener("click", () => toggleOverview(true));
+      btnCloseOverview.addEventListener("click", () => toggleOverview(false));
+      overviewOverlay.addEventListener("click", (e) => {
+        if (e.target === overviewOverlay) {
+          toggleOverview(false);
+        }
+      });
+
+      // Fullscreen Toggle
+      btnFullscreen.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen().catch((err) => {
+            console.error(`Error attempting to enable fullscreen: ${err.message}`);
+          });
+        } else {
+          document.exitFullscreen();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

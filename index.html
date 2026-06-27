@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DISRUPT AI Hackathon (with KANSAI) | 関西学生文理共創AIハッカソン特設サイト</title>
+  <meta name="description" content="関西の学生が生成AIを活用してリアルな地域課題を解決し、社会に実装する「DISRUPT AI Hackathon (with KANSAI)～Create Liberal＆Sciences～」特設サイト。">
+  
+  <!-- Google Fonts: Outfit & Noto Sans JP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;800;900&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for cute icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="index.css?v=20">
+</head>
+<body>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+      }
+      const savedPresetVars = localStorage.getItem('theme-preset-variables');
+      if (savedPresetVars) {
+        try {
+          const vars = JSON.parse(savedPresetVars);
+          const root = document.documentElement;
+          for (const [key, val] of Object.entries(vars)) {
+            root.style.setProperty(key, val);
+          }
+        } catch (e) {
+          console.error("Error applying saved theme preset styles:", e);
+        }
+      }
+    })();
+  </script>
+
+  <!-- Floating background blobs for light theme gorgeousness -->
+  <div class="bg-blobs-container">
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+    <div class="bg-blob blob-4"></div>
+    <div class="bg-blob blob-5"></div>
+  </div>
+
+  <!-- 1. 空間突破 (Text Mask Zoom / mix-blend-mode: screen) -->
+  <div class="zoom-mask-overlay" id="zoom-mask">
+    <div class="mask-bg-black">
+      <div class="loading-container" id="loading-container">
+        <div class="loading-terminal-text">DISRUPT_CORE_INIT // CONNECTING...</div>
+        <div class="cyber-loading-bar-wrap">
+          <div class="cyber-loading-bar" id="loading-bar"></div>
+        </div>
+        <div class="loading-percentage" id="loading-percent">0%</div>
+      </div>
+      <h1 class="mask-text-white" id="mask-text">AI</h1>
+    </div>
+  </div>
+
+  <!-- 5. SVGパスドローイング (セクション連結線) -->
+  <svg class="scroll-svg-path-container" width="100" height="100%" viewBox="0 0 100 1000" preserveAspectRatio="none">
+    <path id="scroll-circuit-path" d="M 50 0 L 50 150 L 10 300 L 10 450 L 90 600 L 90 750 L 50 900 L 50 1000" fill="none" stroke="url(#circuit-grad)" stroke-width="2.5"/>
+    <defs>
+      <linearGradient id="circuit-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#ff007f"/>
+        <stop offset="50%" stop-color="#00f0ff"/>
+        <stop offset="100%" stop-color="#fffb00"/>
+      </linearGradient>
+    </defs>
+  </svg>
+  
+  <!-- Click Ripple Shockwave Container -->
+  <div id="shockwave-container" class="shockwave-container"></div>
+  
+  <!-- Background Canvas for Cyber Kawaii Particles -->
+  <canvas id="particles-canvas"></canvas>
+  <div class="cyber-grid-overlay"></div>
+  <div class="cyber-fog-overlay"></div>
+
+  <!-- Header Navigation -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="#" class="logo-text">
+        <span class="logo-cyber">DISRUPT</span>
+        <span class="logo-kawaii">AI Hackathon</span>
+      </a>
+      
+      <button class="mobile-nav-toggle" aria-label="メニューを開く" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul>
+          <li><a href="#vision" class="nav-link"><i class="fa-solid fa-eye text-pink"></i> ビジョン</a></li>
+          <li><a href="#tracks" class="nav-link"><i class="fa-solid fa-gamepad text-cyan"></i> トラック</a></li>
+          <li><a href="#timeline" class="nav-link"><i class="fa-solid fa-route text-yellow"></i> ロードマップ</a></li>
+          <li><a href="#members" class="nav-link"><i class="fa-solid fa-users text-pink"></i> メンバー & 会場</a></li>
+          <li><a href="#apply" class="nav-btn-apply"><i class="fa-solid fa-paper-plane"></i> エントリーする</a></li>
+          <li>
+            <div class="theme-dropdown-wrap" id="theme-dropdown-wrap">
+              <button class="theme-dropdown-trigger" id="theme-dropdown-trigger" aria-label="テーマ選択" title="テーマを選択">
+                <i class="fa-solid fa-palette"></i> Theme
+              </button>
+              <div class="theme-dropdown-menu" id="theme-dropdown-menu">
+                <div class="theme-dropdown-header">
+                  <span>🎨 テーマを選択 (50種類)</span>
+                </div>
+                <div class="theme-grid" id="theme-grid">
+                  <!-- 50テーマがJSによって動的に生成される -->
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="テーマ切り替え" style="margin-left: 10px;">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-glow-cyan"></div>
+    <div class="hero-glow-pink"></div>
+    
+    <div class="hero-content">
+      <div class="tagline-badge">
+        <span class="pulse-dot"></span>
+        <span>京都の未来を、AIでカタチにせよ。</span>
+      </div>
+      
+      <h1 class="hero-title">
+        <span class="title-sub">0→1社会実装型学生ハッカソン</span>
+        <span class="title-main-glow" id="hero-title-main">DISRUPT AI HACKATHON</span>
+      </h1>
+      
+      <p class="hero-desc">
+        作っただけで終わらせない。「作って、動かして、京都の街へ送り出す」。<br>
+        文理の枠を超え、最新AIを味方に、君の「小さなひらめき」を世界に発信するエキサイティングな夏がここから始まる！
+      </p>
+      
+      <div class="hero-ctas">
+        <button id="hero-btn-apply" class="btn-primary-neon-cyber">
+          <span class="btn-text">エントリーする</span>
+          <span class="btn-shimmer"></span>
+        </button>
+        <a href="#vision" class="btn-secondary-cyber">
+          詳細をチェックする <i class="fa-solid fa-arrow-down-long"></i>
+        </a>
+      </div>
+
+      <!-- Countdown Timer -->
+      <div class="countdown-wrap" id="countdown-wrap">
+        <p class="countdown-label"><i class="fa-solid fa-clock text-cyan"></i> 8月プレイベント開催まで</p>
+        <div class="countdown-units">
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-days">00</span>
+            <span class="countdown-tag">DAYS</span>
+          </div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-hours">00</span>
+            <span class="countdown-tag">HOURS</span>
+          </div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-mins">00</span>
+            <span class="countdown-tag">MINS</span>
+          </div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-secs">00</span>
+            <span class="countdown-tag">SECS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator">
+      <span class="mouse-icon">
+        <span class="mouse-wheel"></span>
+      </span>
+      <span class="scroll-text">SCROLL DOWN</span>
+    </div>
+  </section>
+
+  <!-- Vision Section with 2. Z-Axis Dive -->
+  <section class="vision-section" id="vision">
+    <div class="dive-viewport">
+      <div class="dive-container">
+        <div class="container dive-content">
+          <div class="section-header fade-in-mobile">
+            <h2 class="section-title text-glow-pink"><span class="title-en">VISION</span>ビジョン</h2>
+            <p class="section-subtitle">なぜ今、京都でAIハッカソンなのか？</p>
+          </div>
+
+          <div class="kyoto-problem-box glass-card dive-card fade-in-mobile" data-depth="1">
+            <div class="box-icon-wrap">
+              <i class="fa-solid fa-city problem-icon"></i>
+            </div>
+            <div class="problem-content">
+              <h3 class="problem-title">「大学のまち京都」が抱える深刻な若者流出問題</h3>
+              <p class="problem-text">
+                京都は人口の約10％が大学生という全国屈指の学生街でありながら、卒業と同時に多くの頭脳が東京や大阪へ流出しています。
+                その最大の要因は、最先端の技術を実践し、自分の手で0からプロダクトを生み出して「社会に実装する」ようなイノベーションコミュニティが不足していることにあります。
+                私たちは、AIの力でこの「社会実装の壁」を突破します！
+              </p>
+            </div>
+          </div>
+
+          <div class="usp-grid">
+            <!-- USP 1 -->
+            <div class="usp-card glass-card dive-card fade-in-mobile" data-usp="1" data-depth="2">
+              <div class="usp-header">
+                <span class="usp-num">01</span>
+                <div class="usp-icon-box pink-glow">
+                  <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+              </div>
+              <h3 class="usp-title">成果物が生き続ける<br><span class="highlight-pink">「Living Product」</span></h3>
+              <p class="usp-desc">
+                「作って、審査されて終わり」の使い捨てハッカソンはもう古い！優秀なプロダクトはイベント終了後も、事務局がホスティングや運用をサポート。実際に京都の街で稼働させ続けます。
+              </p>
+            </div>
+
+            <!-- USP 2 -->
+            <div class="usp-card glass-card dive-card fade-in-mobile" data-usp="2" data-depth="3">
+              <div class="usp-header">
+                <span class="usp-num">02</span>
+                <div class="usp-icon-box cyan-glow">
+                  <i class="fa-solid fa-gamepad"></i>
+                </div>
+              </div>
+              <h3 class="usp-title">感情を揺さぶるリアルバトル<br><span class="highlight-cyan">「Live User Testing」</span></h3>
+              <p class="usp-desc">
+                きれいなスライドだけのプレゼン審査ではなく、中間発表で他のチーム同士や一般ユーザーが実際にアプリを使い合う「体験テストセッション」を配置。リアルなフィードバック獲得数が審査に直撃！
+              </p>
+            </div>
+
+            <!-- USP 3 -->
+            <div class="usp-card glass-card dive-card fade-in-mobile" data-usp="3" data-depth="4">
+              <div class="usp-header">
+                <span class="usp-num">03</span>
+                <div class="usp-icon-box yellow-glow">
+                  <i class="fa-solid fa-bolt"></i>
+                </div>
+              </div>
+              <h3 class="usp-title">文理協働の科学<br><span class="highlight-yellow">「0→1 Team Synergy」</span></h3>
+              <p class="usp-desc">
+                PM(企画・文系) × エンジニア(理系) × デザイナーを運営が科学的にマッチング。誰もが「自分の得意領域」で主役として輝ける最強のコラボレーションを体験できます。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Challenge Tracks Section (Horizontal Scroll / Scrolljacking) -->
+  <section class="tracks-section-horizontal-wrap" id="tracks">
+    <div class="tracks-sticky-box">
+      <div class="tracks-horizontal-container" id="tracks-horizontal-container">
+        
+        <!-- Track Intro Slide -->
+        <div class="track-slide intro-slide">
+          <div class="slide-inner">
+            <div class="section-header fade-in-mobile">
+              <h2 class="section-title text-glow-cyan"><span class="title-en">CHALLENGE TRACKS</span>課題テーマ</h2>
+              <p class="section-subtitle">京都のリアルな課題を解決する3つのトラック</p>
+              <div class="swipe-hint"><i class="fa-solid fa-angles-right"></i> スクロールして各トラックをチェック</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track A Slide -->
+        <div class="track-slide">
+          <div class="track-card-horizontal glass-card fade-in-mobile">
+            <span class="track-badge-tag pink">THEME A</span>
+            <h3 class="track-title-detail">スマート観光・地域活性化</h3>
+            <div class="track-meta">
+              <div class="meta-item"><span class="meta-label">課題:</span>一部の有名観光エリアへのオーバーツーリズム混雑と、周辺の隠れた名店・商店街の認知不足。</div>
+              <div class="meta-item"><span class="meta-label">解決アプローチ:</span>AIを用いて観光客のリアルタイムな気分や混雑状況を分析し、「今行くべき隠れた京都の魅力」をパーソナライズ提案。回遊と消費を楽しく促進するツール。</div>
+            </div>
+            <div class="track-example">
+              <h4>💡 アイデア・アウトプット例</h4>
+              <ul>
+                <li><i class="fa-solid fa-star text-pink"></i> 混雑検知と連動してゲリラクーポンを発行するAIチャットボット</li>
+                <li><i class="fa-solid fa-star text-pink"></i> 観光客の「今の気分」に応じたディープな裏道ルート自動提案アプリ</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track B Slide -->
+        <div class="track-slide">
+          <div class="track-card-horizontal glass-card fade-in-mobile">
+            <span class="track-badge-tag cyan">THEME B</span>
+            <h3 class="track-title-detail">AI職人アシスタント＆グローバル発信</h3>
+            <div class="track-meta">
+              <div class="meta-item"><span class="meta-label">課題:</span>後継者不足が進む京都の伝統産業。そして、海外向けマーケティングや魅力発信ノウハウの不足。</div>
+              <div class="meta-item"><span class="meta-label">解決アプローチ:</span>職人の技術や暗黙知を学習させた対話型AIアシスタントの構築、または多言語での魅力発信・越境ECマーケティングを半自動化するクリエイティブAIツールの開発。</div>
+            </div>
+            <div class="track-example">
+              <h4>💡 アイデア・アウトプット例</h4>
+              <ul>
+                <li><i class="fa-solid fa-star text-cyan"></i> 伝統工芸の「技」やニュアンスを言語化して教えるAI職人チャット</li>
+                <li><i class="fa-solid fa-star text-cyan"></i> 写真一枚から海外ウケする製品説明文と海外広告を即座に生成するAI</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track C Slide -->
+        <div class="track-slide">
+          <div class="track-card-horizontal glass-card fade-in-mobile">
+            <span class="track-badge-tag yellow">THEME C</span>
+            <h3 class="track-title-detail">超大学スマートハブ</h3>
+            <div class="track-meta">
+              <div class="meta-item"><span class="meta-label">課題:</span>京都に15万人もの学生が集まりながら、大学ごとのセクショナリズムや日常的な他校・文理連携が希薄。</div>
+              <div class="meta-item"><span class="meta-label">解決アプローチ:</span>学術的関心や趣味、地域活動への興味をもとに、大学の枠を超えてAIがマッチング。共同プロジェクトやサークル活動を自発的に誘発するプラットフォーム。</div>
+            </div>
+            <div class="track-example">
+              <h4>💡 アイデア・アウトプット例</h4>
+              <ul>
+                <li><i class="fa-solid fa-star text-yellow"></i> アイデアの種を投げると相性の良い異分野の学生を推薦するAIハブ</li>
+                <li><i class="fa-solid fa-star text-yellow"></i> 地域の空き家活用やプロジェクトメンバーをマッチングするAI仲介エージェント</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Flow Section (replaces old AI Core Activation) -->
+  <section class="experience-flow-section" id="experience-flow">
+    <div class="container">
+      <div class="section-header fade-in-target">
+        <h2 class="section-title text-glow-cyan"><span class="title-en">EXPERIENCE FLOW</span>参加者の体験フロー</h2>
+        <p class="section-subtitle">アイデアの種が京都の街で動き出すまでの5ステップ</p>
+      </div>
+
+      <div class="flow-timeline">
+        <div class="flow-progress-track">
+          <div class="flow-progress-fill" id="flow-progress-fill"></div>
+        </div>
+
+        <div class="flow-step fade-in-target" data-step="1">
+          <div class="flow-node">
+            <div class="flow-node-dot active"><i class="fa-solid fa-lightbulb"></i></div>
+          </div>
+          <div class="flow-card glass-card">
+            <span class="flow-step-num pink">STEP 01</span>
+            <h3 class="flow-step-title">アイデアの種を生む</h3>
+            <p class="flow-step-desc">京都のリアルな課題を選び、チームでブレストしてアイデアの種を見つける。ノーコードAIツールを使った最初のプロトタイプ検証もここで。</p>
+          </div>
+        </div>
+
+        <div class="flow-step fade-in-target" data-step="2">
+          <div class="flow-node">
+            <div class="flow-node-dot"><i class="fa-solid fa-code"></i></div>
+          </div>
+          <div class="flow-card glass-card">
+            <span class="flow-step-num cyan">STEP 02</span>
+            <h3 class="flow-step-title">AIで高速プロトタイプ</h3>
+            <p class="flow-step-desc">生成AIをフル活用して動くプロダクトを高速に構築。Cursor、GitHub Copilot、Claude等を使い倒し、スピード開発を体験。</p>
+          </div>
+        </div>
+
+        <div class="flow-step fade-in-target" data-step="3">
+          <div class="flow-node">
+            <div class="flow-node-dot"><i class="fa-solid fa-users"></i></div>
+          </div>
+          <div class="flow-card glass-card">
+            <span class="flow-step-num yellow">STEP 03</span>
+            <h3 class="flow-step-title">リアルユーザーにぶつける</h3>
+            <p class="flow-step-desc">中間の「体験テストセッション」で他チームや実ユーザーに使ってもらう。驚きの声とリアルなフィードバックを獲得！</p>
+          </div>
+        </div>
+
+        <div class="flow-step fade-in-target" data-step="4">
+          <div class="flow-node">
+            <div class="flow-node-dot"><i class="fa-solid fa-rotate"></i></div>
+          </div>
+          <div class="flow-card glass-card">
+            <span class="flow-step-num pink">STEP 04</span>
+            <h3 class="flow-step-title">フィードバックで磨き抜く</h3>
+            <p class="flow-step-desc">テストで得た生の声をプロダクトに反映。メンターのサポートを受けながら、ユーザー体験を極限まで磨く。</p>
+          </div>
+        </div>
+
+        <div class="flow-step fade-in-target" data-step="5">
+          <div class="flow-node">
+            <div class="flow-node-dot"><i class="fa-solid fa-rocket"></i></div>
+          </div>
+          <div class="flow-card glass-card">
+            <span class="flow-step-num cyan">STEP 05</span>
+            <h3 class="flow-step-title">京都の街へリリース！</h3>
+            <p class="flow-step-desc">最終プレゼン＆デモデイ。優秀なプロダクトはイベント後も事務局が支援し、実際に京都の街で稼働し続ける。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap Section with 9. 3D Card Stack (Sticky Stacking) -->
+  <section class="timeline-section-stack" id="timeline">
+    <div class="container">
+      <div class="section-header fade-in-mobile">
+        <h2 class="section-title text-glow-pink"><span class="title-en">ROADMAP</span>ロードマップ</h2>
+        <p class="section-subtitle">今夏のプレイベントから本格開催に向けた段階的ロードマップ</p>
+      </div>
+
+      <div class="timeline-stack-container">
+        <!-- Phase 1 -->
+        <div class="timeline-step-stack glass-card fade-in-mobile active" data-phase="1">
+          <div class="step-num pink">PHASE 01</div>
+          <div class="step-header">
+            <h3 class="step-title">プレイベント & アイデアソン</h3>
+            <span class="step-date">8月開催 (プレ勉強会・LT会 ＆ 8月後半アイデアソン)</span>
+          </div>
+          <div class="step-body">
+            <p class="step-desc">ノーコードAIツールを用い、技術経験の有無を問わずライトな成功体験を得る1日。8月前半に勉強会やLT会を挟み、8月後半にアイデアソン・選抜を行います。</p>
+            <div class="step-meta">
+              <span><i class="fa-solid fa-user-group text-pink"></i> 30〜40名規模 (6〜8チーム)</span>
+              <span><i class="fa-solid fa-wallet text-pink"></i> 参加費無料 / Red Bull協賛</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="timeline-step-stack glass-card fade-in-mobile" data-phase="2">
+          <div class="step-num cyan">PHASE 02</div>
+          <div class="step-header">
+            <h3 class="step-title">本格実装ハッカソン</h3>
+            <span class="step-date">9月開催予定 (2Day)</span>
+          </div>
+          <div class="step-body">
+            <p class="step-desc">コーディングや本格的なプロトタイピングを行う2日間のハッカソン。中間に「体験テストセッション」を配置し、ユーザーフィードバックを反映させる実践開発。</p>
+            <div class="step-meta">
+              <span><i class="fa-solid fa-user-group text-cyan"></i> 50〜60名規模 (10〜12チーム)</span>
+              <span><i class="fa-solid fa-award text-cyan"></i> 企業メンター陣の伴走サポート</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="timeline-step-stack glass-card fade-in-mobile" data-phase="3">
+          <div class="step-num yellow">PHASE 03</div>
+          <div class="step-header">
+            <h3 class="step-title">来年以降の年2回・大型開催</h3>
+            <span class="step-date">2027年以降 春・夏開催予定</span>
+          </div>
+          <div class="step-body">
+            <p class="step-desc">来年以降に「春」と「夏」の年2回、大型イベントを開催することを見据えます。今年の夏（2026年）はフェーズ1〜2の規模に注力し、段階的にスケールさせていきます。</p>
+            <div class="step-meta">
+              <span><i class="fa-solid fa-user-group text-yellow"></i> 80〜100名規模 (16〜20チーム)</span>
+              <span><i class="fa-solid fa-cloud-arrow-up text-yellow"></i> 優秀作はイベント後も社会実装へ伴走</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsors Section -->
+  <section class="sponsors-section" id="sponsors">
+    <div class="container">
+      <div class="section-header fade-in-target">
+        <h2 class="section-title text-glow-yellow"><span class="title-en">PARTNERS</span>パートナー・協賛</h2>
+        <p class="section-subtitle">本ハッカソンを支えてくださるパートナー企業</p>
+      </div>
+      <div class="sponsors-carousel-wrap">
+        <div class="sponsors-carousel" id="sponsors-carousel">
+          <div class="sponsor-item">
+            <div class="sponsor-logo-box">
+              <i class="fa-solid fa-building fa-2x"></i>
+            </div>
+            <span class="sponsor-name">NTT西日本<br><small>QUINTBRIDGE</small></span>
+          </div>
+          <div class="sponsor-item">
+            <div class="sponsor-logo-box">
+              <i class="fa-solid fa-bolt fa-2x"></i>
+            </div>
+            <span class="sponsor-name">Red Bull<br><small>Japan</small></span>
+          </div>
+          <div class="sponsor-item">
+            <div class="sponsor-logo-box">
+              <i class="fa-solid fa-flask fa-2x"></i>
+            </div>
+            <span class="sponsor-name">JGCI<br><small>研究会</small></span>
+          </div>
+          <div class="sponsor-item">
+            <div class="sponsor-logo-box">
+              <i class="fa-solid fa-handshake fa-2x"></i>
+            </div>
+            <span class="sponsor-name">YOUR LOGO<br><small>協賛企業募集中</small></span>
+          </div>
+          <!-- Duplicate for seamless infinite scroll -->
+          <div class="sponsor-item">
+            <div class="sponsor-logo-box">
+              <i class="fa-solid fa-building fa-2x"></i>
+            </div>
+            <span class="sponsor-name">NTT西日本<br><small>QUINTBRIDGE</small></span>
+          </div>
+          <div class="sponsor-item">
+            <div class="sponsor-logo-box">
+              <i class="fa-solid fa-bolt fa-2x"></i>
+            </div>
+            <span class="sponsor-name">Red Bull<br><small>Japan</small></span>
+          </div>
+          <div class="sponsor-item">
+            <div class="sponsor-logo-box">
+              <i class="fa-solid fa-flask fa-2x"></i>
+            </div>
+            <span class="sponsor-name">JGCI<br><small>研究会</small></span>
+          </div>
+          <div class="sponsor-item">
+            <div class="sponsor-logo-box">
+              <i class="fa-solid fa-handshake fa-2x"></i>
+            </div>
+            <span class="sponsor-name">YOUR LOGO<br><small>協賛企業募集中</small></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Members & Venue Section with 8. Venue Clip-path Reveal & 10. Members Scattering -->
+  <section class="members-section" id="members">
+    
+    <!-- 8. Venue Clip-Path Reveal Section -->
+    <div class="venue-reveal-wrapper">
+      <div class="venue-sticky-box">
+        <div class="venue-showcase glass-card fade-in-mobile" id="venue-card">
+          <div class="venue-info">
+            <span class="venue-label"><i class="fa-solid fa-location-dot text-cyan"></i> MAIN STAGE</span>
+            <h3 class="venue-title">QUINTBRIDGE (クイントブリッジ)</h3>
+            <p class="venue-desc">
+              大阪・京橋にある、NTT西日本が運営する関西最大級のオープンイノベーション拠点。
+              最先端のテクノロジーと情熱が集まる最高の空間で、学生たちのアイデアを解き放ちます。
+            </p>
+            <div class="venue-features">
+              <span><i class="fa-solid fa-wifi text-cyan"></i> 高速Wi-Fi</span>
+              <span><i class="fa-solid fa-plug text-cyan"></i> 潤沢な電源インフラ</span>
+              <span><i class="fa-solid fa-mug-hot text-cyan"></i> フリードリンク</span>
+            </div>
+          </div>
+          <div class="venue-visual">
+            <div class="visual-placeholder venue-pic">
+              <i class="fa-solid fa-cubes visual-main-icon text-cyan"></i>
+              <span class="visual-text">QUINTBRIDGE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. Members Grid with Scattering -->
+    <div class="container members-container-section">
+      <div class="section-header">
+        <h2 class="section-title text-glow-cyan"><span class="title-en">ORGANIZER</span>運営・事務局</h2>
+        <p class="section-subtitle">0→1を仕掛ける16名のコアメンバーと、最先端の舞台</p>
+      </div>
+
+      <div class="members-container">
+        <h3 class="members-title-sub"><i class="fa-solid fa-user-ninja text-pink"></i> 運営事務局「DISRUPT」コアメンバー (16名体制)</h3>
+        
+        <div class="unit-selector">
+          <button class="unit-btn active" data-unit="all">ALL UNITS</button>
+          <button class="unit-btn" data-unit="pm">統括PM</button>
+          <button class="unit-btn" data-unit="planning">企画・MC</button>
+          <button class="unit-btn" data-unit="tech">テック</button>
+          <button class="unit-btn" data-unit="design">デザイン</button>
+          <button class="unit-btn" data-unit="community">広報・コミュ</button>
+          <button class="unit-btn" data-unit="logistics">会場ロジ</button>
+        </div>
+
+        <div class="members-grid-scatter" id="members-grid">
+          <!-- Member Card 1 -->
+          <div class="member-card glass-card pm scroll-scatter-card" style="--scatter-x: -300px; --scatter-y: 200px; --scatter-rot: -20deg;" data-member="takubo">
+            <div class="member-badge pm-badge">統括PM</div>
+            <div class="member-avatar">
+              <i class="fa-solid fa-circle-user member-icon text-pink"></i>
+            </div>
+            <h4 class="member-name">田窪 佑一朗</h4>
+            <span class="member-title">発起人・総合統括</span>
+            <div class="member-stats">
+              <div class="stat-row">
+                <span class="stat-name">PM</span>
+                <div class="stat-bar"><div class="stat-fill pink" style="width: 95%;"></div></div>
+              </div>
+              <div class="stat-row">
+                <span class="stat-name">Leadership</span>
+                <div class="stat-bar"><div class="stat-fill pink" style="width: 90%;"></div></div>
+              </div>
+            </div>
+            <p class="member-desc">「一人ひとりのアイデアをAIでカタチに」新組織の創設者。全体を力強く牽引する。</p>
+          </div>
+
+          <!-- Member Card 2 -->
+          <div class="member-card glass-card tech scroll-scatter-card" style="--scatter-x: 250px; --scatter-y: -250px; --scatter-rot: 15deg;" data-member="tech1">
+            <div class="member-badge tech-badge">テック</div>
+            <div class="member-avatar">
+              <i class="fa-solid fa-circle-user member-icon text-cyan"></i>
+            </div>
+            <h4 class="member-name">コアエンジニア M</h4>
+            <span class="member-title">技術リード / インフラ設計</span>
+            <div class="member-stats">
+              <div class="stat-row">
+                <span class="stat-name">Coding</span>
+                <div class="stat-bar"><div class="stat-fill cyan" style="width: 95%;"></div></div>
+              </div>
+              <div class="stat-row">
+                <span class="stat-name">AI Tools</span>
+                <div class="stat-bar"><div class="stat-fill cyan" style="width: 90%;"></div></div>
+              </div>
+            </div>
+            <p class="member-desc">開発環境やAPI、配布ツールの調整を一手に担い、参加者のイノベーションを技術面でイネーブルする。</p>
+          </div>
+
+          <!-- Member Card 3 -->
+          <div class="member-card glass-card design scroll-scatter-card" style="--scatter-x: -200px; --scatter-y: -300px; --scatter-rot: -15deg;" data-member="design1">
+            <div class="member-badge design-badge">デザイン</div>
+            <div class="member-avatar">
+              <i class="fa-solid fa-circle-user member-icon text-yellow"></i>
+            </div>
+            <h4 class="member-name">クリエイティブ D</h4>
+            <span class="member-title">ブランディング / UIUX</span>
+            <div class="member-stats">
+              <div class="stat-row">
+                <span class="stat-name">Creative</span>
+                <div class="stat-bar"><div class="stat-fill yellow" style="width: 90%;"></div></div>
+              </div>
+              <div class="stat-row">
+                <span class="stat-name">Pixel/UI</span>
+                <div class="stat-bar"><div class="stat-fill yellow" style="width: 85%;"></div></div>
+              </div>
+            </div>
+            <p class="member-desc">本イベントの世界観を支配するデザイン設計士。広報クリエイティブや会場演出もプロデュース。</p>
+          </div>
+
+          <!-- Member Card 4 -->
+          <div class="member-card glass-card planning scroll-scatter-card" style="--scatter-x: 300px; --scatter-y: 300px; --scatter-rot: 25deg;" data-member="planning1">
+            <div class="member-badge planning-badge">企画・MC</div>
+            <div class="member-avatar">
+              <i class="fa-solid fa-circle-user member-icon text-pink"></i>
+            </div>
+            <h4 class="member-name">ファシリテーター P</h4>
+            <span class="member-title">ハックテーマ設計 / 司会進行</span>
+            <div class="member-stats">
+              <div class="stat-row">
+                <span class="stat-name">Talk</span>
+                <div class="stat-bar"><div class="stat-fill pink" style="width: 90%;"></div></div>
+              </div>
+              <div class="stat-row">
+                <span class="stat-name">Planning</span>
+                <div class="stat-bar"><div class="stat-fill pink" style="width: 85%;"></div></div>
+              </div>
+            </div>
+            <p class="member-desc">会場の熱量を支配する触媒（カタリスト）。参加者が最高のパフォーマンスを出せる空気を作る。</p>
+          </div>
+
+          <!-- Member Card 5 -->
+          <div class="member-card glass-card community scroll-scatter-card" style="--scatter-x: -350px; --scatter-y: 150px; --scatter-rot: -10deg;" data-member="comm1">
+            <div class="member-badge community-badge">広報・コミュ</div>
+            <div class="member-avatar">
+              <i class="fa-solid fa-circle-user member-icon text-cyan"></i>
+            </div>
+            <h4 class="member-name">コネクター C</h4>
+            <span class="member-title">コミュマネ / 集客・広報</span>
+            <div class="member-stats">
+              <div class="stat-row">
+                <span class="stat-name">SNS/PR</span>
+                <div class="stat-bar"><div class="stat-fill cyan" style="width: 90%;"></div></div>
+              </div>
+              <div class="stat-row">
+                <span class="stat-name">Network</span>
+                <div class="stat-bar"><div class="stat-fill cyan" style="width: 95%;"></div></div>
+              </div>
+            </div>
+            <p class="member-desc">Connpass勉強会や主要大学の研究室への草の根アプローチにより、関西中の優秀層を集める渦を作る。</p>
+          </div>
+
+          <!-- Member Card 6 -->
+          <div class="member-card glass-card logistics scroll-scatter-card" style="--scatter-x: 200px; --scatter-y: -150px; --scatter-rot: 30deg;" data-member="logi1">
+            <div class="member-badge logistics-badge">会場ロジ</div>
+            <div class="member-avatar">
+              <i class="fa-solid fa-circle-user member-icon text-yellow"></i>
+            </div>
+            <h4 class="member-name">ロジスティシャン L</h4>
+            <span class="member-title">インフラ管理 / ロジ運営</span>
+            <div class="member-stats">
+              <div class="stat-row">
+                <span class="stat-name">Support</span>
+                <div class="stat-bar"><div class="stat-fill yellow" style="width: 95%;"></div></div>
+              </div>
+              <div class="stat-row">
+                <span class="stat-name">Logistics</span>
+                <div class="stat-bar"><div class="stat-fill yellow" style="width: 90%;"></div></div>
+              </div>
+            </div>
+            <p class="member-desc">QUINTBRIDGE側との調整や、Red Bullなどのインフラ・ドリンク管理を行い、快適な体験をデザインする。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header fade-in-target">
+        <h2 class="section-title text-glow-pink"><span class="title-en">FAQ</span>よくある質問</h2>
+        <p class="section-subtitle">参加を検討中の方からよく寄せられるご質問</p>
+      </div>
+
+      <div class="faq-list" id="faq-list">
+        <div class="faq-item glass-card fade-in-target">
+          <button class="faq-question" aria-expanded="false">
+            <span><i class="fa-solid fa-circle-question text-pink"></i> プログラミング未経験でも参加できますか？</span>
+            <i class="fa-solid fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            <p>もちろんです！Phase 01（アイデアソン）ではノーコードAIツールを使うため、プログラミング経験は一切不要です。PM・企画・デザイナーとして参加し、エンジニアとチームを組むことで自然と学びながら成長できる環境を用意しています。</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-card fade-in-target">
+          <button class="faq-question" aria-expanded="false">
+            <span><i class="fa-solid fa-circle-question text-cyan"></i> チームは事前に組む必要がありますか？</span>
+            <i class="fa-solid fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            <p>不要です。個人参加も大歓迎！運営側が「技術・デザイン・企画」の相性と熱量を分析し、最もシナジーが出る混成チームを科学的にマッチングします（0→1 Team Synergy）。もちろん友人同士でのチーム参加もOKです。</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-card fade-in-target">
+          <button class="faq-question" aria-expanded="false">
+            <span><i class="fa-solid fa-circle-question text-yellow"></i> 参加費はかかりますか？</span>
+            <i class="fa-solid fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            <p>参加費は無料です。会場の利用料、Wi-Fi、電源インフラに加え、Red Bull等のドリンクも提供されます。交通費のみ各自でご負担ください。</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-card fade-in-target">
+          <button class="faq-question" aria-expanded="false">
+            <span><i class="fa-solid fa-circle-question text-pink"></i> 必要な持ち物は？</span>
+            <i class="fa-solid fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            <p>ノートPC（エンジニア・デザイナーの方）と充電器をお持ちください。企画・PMロールの方はスマートフォンのみでもOKです。Wi-Fiと電源は会場に完備されています。</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-card fade-in-target">
+          <button class="faq-question" aria-expanded="false">
+            <span><i class="fa-solid fa-circle-question text-cyan"></i> 文系でも参加できますか？</span>
+            <i class="fa-solid fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            <p>文系の方こそ大歓迎です！課題設計、ユーザーリサーチ、ビジネスモデル構築、プレゼン、マーケティングなど、文系の強みが最大限に活かせる役割がたくさんあります。文理の枠を超えた協働こそ、本ハッカソンの核心です。</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-card fade-in-target">
+          <button class="faq-question" aria-expanded="false">
+            <span><i class="fa-solid fa-circle-question text-yellow"></i> オンラインでの参加は可能ですか？</span>
+            <i class="fa-solid fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            <p>本ハッカソンは「リアルな場でのコラボレーション」を大切にしているため、原則としてオフライン（QUINTBRIDGE会場）での参加をお願いしています。ただし、一部のプレイベントやワークショップはオンライン配信を検討中です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apply / Form Section -->
+  <section class="apply-section" id="apply">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title text-glow-pink"><span class="title-en">ENTRY</span>エントリー</h2>
+        <p class="section-subtitle">新しい社会実装の創業メンバー・挑戦者求む！</p>
+      </div>
+
+      <div class="form-container-glow">
+        <div class="apply-form-wrap glass-card">
+          <div class="form-header">
+            <div class="control-lights">
+              <span class="light red"></span>
+              <span class="light yellow"></span>
+              <span class="light green"></span>
+            </div>
+            <span class="panel-title">DISRUPT-HACK-2026-CONSOLE</span>
+          </div>
+
+          <!-- The Registration Form -->
+          <form id="hackathon-form" novalidate>
+            <div class="form-grid">
+              
+              <!-- Name -->
+              <div class="form-group">
+                <label for="user-name" class="form-label"><i class="fa-solid fa-signature text-pink"></i> お名前 (必須)</label>
+                <input type="text" id="user-name" name="name" class="form-input" placeholder="例: 京都 太郎" required>
+                <span class="error-msg" id="name-error"></span>
+              </div>
+
+              <!-- University & Grade -->
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="user-university" class="form-label"><i class="fa-solid fa-building-columns text-cyan"></i> 大学名 (必須)</label>
+                  <input type="text" id="user-university" name="university" class="form-input" placeholder="例: 京都大学" required>
+                  <span class="error-msg" id="uni-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="user-grade" class="form-label"><i class="fa-solid fa-graduation-cap text-cyan"></i> 学年 (必須)</label>
+                  <select id="user-grade" name="grade" class="form-select" required>
+                    <option value="" disabled selected>学年を選択</option>
+                    <option value="B1">大学1年</option>
+                    <option value="B2">大学2年</option>
+                    <option value="B3">大学3年</option>
+                    <option value="B4">大学4年</option>
+                    <option value="M1">修士1年</option>
+                    <option value="M2">修士2年</option>
+                    <option value="D">博士</option>
+                    <option value="other">その他</option>
+                  </select>
+                  <span class="error-msg" id="grade-error"></span>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="user-email" class="form-label"><i class="fa-solid fa-envelope text-yellow"></i> メールアドレス (必須)</label>
+                <input type="email" id="user-email" name="email" class="form-input" placeholder="example@kyoto.ac.jp" required>
+                <span class="error-msg" id="email-error"></span>
+              </div>
+
+              <!-- Role Selection -->
+              <div class="form-group">
+                <label class="form-label"><i class="fa-solid fa-gamepad text-pink"></i> 希望ロール (複数選択可・必須)</label>
+                <div class="role-checkbox-group">
+                  <label class="role-checkbox-btn">
+                    <input type="checkbox" name="roles" value="PM" required>
+                    <span class="role-btn-inner">
+                      <i class="fa-solid fa-lightbulb"></i>
+                      <span class="role-name">PM / 企画</span>
+                      <span class="role-desc">アイデア出し、課題設定、スライド等</span>
+                    </span>
+                  </label>
+                  <label class="role-checkbox-btn">
+                    <input type="checkbox" name="roles" value="Engineer">
+                    <span class="role-btn-inner">
+                      <i class="fa-solid fa-code"></i>
+                      <span class="role-name">エンジニア</span>
+                      <span class="role-desc">AI連携、アプリ開発、実装等</span>
+                    </span>
+                  </label>
+                  <label class="role-checkbox-btn">
+                    <input type="checkbox" name="roles" value="Designer">
+                    <span class="role-btn-inner">
+                      <i class="fa-solid fa-palette"></i>
+                      <span class="role-name">デザイナー</span>
+                      <span class="role-desc">UI/UXモック、Canva、Figma等</span>
+                    </span>
+                  </label>
+                </div>
+                <span class="error-msg" id="roles-error"></span>
+              </div>
+
+              <!-- Pitch / Intent -->
+              <div class="form-group">
+                <label for="user-intent" class="form-label"><i class="fa-solid fa-fire text-cyan"></i> 意気込み・解決したい京都の課題 (任意)</label>
+                <textarea id="user-intent" name="intent" class="form-textarea" rows="4" placeholder="例: AIを使って京都の伝統産業を盛り上げたい！他大の面白い学生と繋がって0→1を作りたい！などなど"></textarea>
+              </div>
+
+            </div>
+
+            <div class="form-submit-wrap">
+              <button type="submit" class="btn-submit-neon" id="submit-btn">
+                <span class="submit-btn-glow"></span>
+                <span class="submit-text"><i class="fa-solid fa-paper-plane"></i> ハッカソンにエントリーする</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Success Modal/Overlay (starts hidden) -->
+          <div class="success-overlay" id="success-overlay">
+            <div class="success-card glass-card">
+              <div class="success-icon-wrap">
+                <i class="fa-solid fa-circle-check success-check-icon"></i>
+              </div>
+              <h3 class="success-title">DEPLOY SUCCESSFUL!</h3>
+              <p class="success-text">
+                ハッカソンへの仮エントリーを受付しました！<br>
+                コンソールから新しい未来へのパケットが送信されました。<br>
+                折り返し、事務局よりメールにて詳細案内をお送りしますので、しばらくお待ちください。
+              </p>
+              <div class="success-meta">
+                <span class="status-badge"><i class="fa-solid fa-circle-nodes"></i> CONNECTED</span>
+                <span class="status-badge"><i class="fa-solid fa-bolt text-yellow"></i> SPEED: MAX</span>
+              </div>
+              <button class="btn-close-success" id="close-success-btn">閉じる</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="#" class="logo-text">
+          <span class="logo-cyber">DISRUPT</span>
+          <span class="logo-kawaii font-round">AI Hackathon</span>
+        </a>
+        <p class="footer-desc">「一人ひとりの『小さなひらめき』を、AIの力で世界へ届ける」</p>
+      </div>
+      
+      <div class="footer-links-wrap">
+        <div class="footer-group">
+          <h4>LINKS</h4>
+          <ul>
+            <li><a href="#vision">ビジョン</a></li>
+            <li><a href="#tracks">課題トラック</a></li>
+            <li><a href="#timeline">ロードマップ</a></li>
+            <li><a href="#members">運営・会場</a></li>
+          </ul>
+        </div>
+        <div class="footer-group">
+          <h4>ABOUT US</h4>
+          <ul>
+            <li>主催: DISRUPT AI Hackathon 運営事務局 (コアメンバー16名)</li>
+            <li>メイン会場: QUINTBRIDGE (大阪市城東区野江)</li>
+            <li>後援: 一般社団法人 Japan Grand Challenge研究会 (JGCI)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 DISRUPT AI Hackathon. All Rights Reserved. Designed by Antigravity.</p>
+    </div>
+  </footer>
+
+  <script src="index.js?v=20"></script>
+</body>
+</html>
